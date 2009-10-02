@@ -1,4 +1,4 @@
-= Spree Product Translations
+## Spree Product Translations
 
 Makes product details, properties and prototypes, as well as taxonomies, translatable using the Globalize 2 plugin. 
 
@@ -54,7 +54,7 @@ Taxon
 
 ## Notes
 
-* The current version of Globalize a patch to get translated field values to show on forms. There's a patch available for this, which hasn't been applied to code-base yet:
+* The current version of Globalize has a bug that keeps the translated field values from showing on forms. There's a patch available for this, which hasn't been applied to code-base yet:
 
 http://gist.github.com/107265
 
