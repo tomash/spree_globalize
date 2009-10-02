@@ -56,9 +56,9 @@ Taxon
 
 * The current version of Globalize has a bug that keeps the translated field values from showing on forms. There's a patch available for this, which hasn't been applied to code-base yet:
 
-http://gist.github.com/107265
+[http://gist.github.com/107265](http://gist.github.com/107265)
 
-http://github.com/joshmh/globalize2/issues/#issue/2
+[http://github.com/joshmh/globalize2/issues/#issue/2](http://github.com/joshmh/globalize2/issues/#issue/2)
 
 * This extension has been tested with Spree 0.8.99 - haven't tested it on 0.9 yet.
 
