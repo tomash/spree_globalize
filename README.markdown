@@ -1,8 +1,8 @@
-## Spree Product Translations
+# Spree Product Translations #
 
 Makes product details, properties and prototypes, as well as taxonomies, translatable using the Globalize 2 plugin. 
 
-## Steps to get it working:
+## Steps to get it working: ##
 
 Configure product_translations to load after the localization extension. This is working well for me: 
 
@@ -26,11 +26,11 @@ If you have pre-existing data, you'll need to run this rake task:
 
 it will copy the original data over to the new translation tables. Globalize 2 doesn't default to the original model table for the default locale like v1 used to do:
 
-## How to use:
+## How to use: ##
 
 To edit the content in a specific language, simply change the locale on the language nav, and edit on the admin as usual.
 
-## Translated fields:
+## Translated fields: ##
 
 Product 
 	name
@@ -52,7 +52,7 @@ Taxon
 	permalink # though I can't find where this is editable on the admin, just in case it does become at some point
   description
 
-## Notes
+## Notes ##
 
 * The current version of Globalize has a bug that keeps the translated field values from showing on forms. There's a patch available for this, which hasn't been applied to code-base yet:
 
