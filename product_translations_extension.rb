@@ -3,7 +3,7 @@
 
 class ProductTranslationsExtension < Spree::Extension
   version "1.0"
-  description "Makes product details, properties and prototypes, as well as taxonomies, translatable using the Globalize 2 plugin"
+  description "Makes product details, properties, prototypes and taxonomies translatable using the Globalize 2 plugin"
   
   def activate
     # add content translations using Globalize 2's helpers

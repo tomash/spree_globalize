@@ -2,17 +2,17 @@
 
 Makes product details, properties, prototypes and taxonomies translatable by bridging the Globalize 2 plugin.
 
-## Steps to get it working: ##
+## Installation and configuration: ##
 
-Configure product_translations to load after the localization extension. This is working well for me: 
+	script/extension install git://github.com/oliverbarnes/spree-product-translations.git
 
-	config.extensions = [:localization, :product_translations, :static_content, :all, :site]
-
-Install the "Globalize 2 plugin":http://github.com/joshmh/globalize2 :
+Install the "Globalize 2 plugin":http://github.com/joshmh/globalize2:
 
 	script/plugin install git://github.com/joshmh/globalize2.git
+	
+Configure product_translations to load after the localization extension. This is working well for me: 
 
-(It'll need this "patch":http://gist.github.com/107265 to get translated field values to show on forms. Please see the notes below for more on this bug)
+	config.extensions = [:localization, :product_translations, :all, :site]
 
 Then run 
 
@@ -53,12 +53,6 @@ Taxon
   	description
 
 ## Notes ##
-
-* The current version of Globalize has a bug that keeps the translated field values from showing on forms. There's a patch available for this, which hasn't been applied to Globalize's code-base yet:
-
-[http://gist.github.com/107265](http://gist.github.com/107265)
-
-[http://github.com/joshmh/globalize2/issues/#issue/2](http://github.com/joshmh/globalize2/issues/#issue/2)
 
 * This extension has been tested with Spree 0.8.99 - haven't tested it on 0.9 yet.
 
