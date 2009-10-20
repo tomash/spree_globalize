@@ -52,8 +52,6 @@ Taxon
 	permalink # though I can't find where this is editable on the admin, just in case it does become at some point
   	description
 
-## Notes ##
+## TODO ##
 
-* This extension has been tested with Spree 0.8.99 - haven't tested it on 0.9 yet.
-
-* No rspec tests yet.
+* Tests
