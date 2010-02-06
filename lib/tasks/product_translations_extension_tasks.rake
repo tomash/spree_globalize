@@ -45,7 +45,6 @@ namespace :spree do
         puts "updating taxon names and permalinks..."
         Taxon.all.each do |t|
       	  t.name = fetch_first_row("select taxons.name from taxons where taxons.id=#{t.id}")
-      	  t.permalink = fetch_first_row("select taxons.permalink from taxons where taxons.id=#{t.id}")
       	  t.save!
         end
         puts "done."

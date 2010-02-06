@@ -4,7 +4,7 @@ class AddTranslationTables < ActiveRecord::Migration
     Property.create_translation_table! :presentation => :string
     Prototype.create_translation_table! :name => :string
     Taxonomy.create_translation_table! :name => :string
-    Taxon.create_translation_table! :name => :string, :permalink => :string
+    Taxon.create_translation_table! :name => :string
   end
 
   def self.down

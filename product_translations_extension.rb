@@ -25,7 +25,7 @@ class ProductTranslationsExtension < Spree::Extension
     end
     
     Taxon.class_eval do
-      translates :name, :permalink
+      translates :name
     end
 
   end
