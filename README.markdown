@@ -49,7 +49,6 @@ Taxonomy
   
 Taxon
 	name
-	permalink # though I can't find where this is editable on the admin, just in case it does become at some point
 
 ## TODO ##
 
