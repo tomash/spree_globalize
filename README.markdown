@@ -53,6 +53,9 @@ Taxon
 	
 OptionType
 	presentation
+	
+OptionValue
+	presentation
 
 ## Running tests ##
 
@@ -61,3 +64,7 @@ You might need to comment out the rspec gem requirement under config/environment
 Spree is officially making a choice for Test::Unit anyway, so this shouldn't create a problem. 
 
 (not that I don't like Rspec, I actually prefer it in other projects.)
+
+## Feature requests and patches welcome ##
+
+If you see anything you need missing, or if you have a useful patch, feel free to submit them on the Issues section of the github project.
