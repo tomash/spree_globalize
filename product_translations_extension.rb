@@ -32,5 +32,9 @@ class ProductTranslationsExtension < Spree::Extension
       translates :presentation
     end
 
+    OptionValue.class_eval do
+      translates :presentation
+    end
+
   end
 end

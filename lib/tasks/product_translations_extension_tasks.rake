@@ -76,6 +76,12 @@ namespace :spree do
       	  p.save!
         end
         puts "done."
+        
+        OptionValue.all.each do |p|
+          p.presentation = fetch_first_row("select option_values.presentation from option_values where option_values.id=#{p.id}")
+          p.save!
+        end
+        puts "done."
       end  
     end
   end
