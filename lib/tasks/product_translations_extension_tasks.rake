@@ -18,10 +18,16 @@ namespace :spree do
 
         @sql = ActiveRecord::Base.connection
         
-        # wrapper to deal with differences in result sets from mysql and sqlite
+        # wrapper to deal with differences in result sets from mysql, sqlite and postgres
         def fetch_first_row(query)
           result = @sql.execute(query)
-          row = result.is_a?(Array) ? result[0][0] : result.fetch_row.first
+          row = if defined?(PGresult) && result.is_a?(PGresult) #postgres
+                  result[0]
+                elsif result.is_a?(Array) #sqlite 
+                  result[0][0]
+                else #mysql
+                  result.fetch_row.first
+                end
         end
 
         puts "updating product names, description, meta_keywords and meta_description..."
@@ -59,6 +65,14 @@ namespace :spree do
         puts "updating prototype names..."
         Prototype.all.each do |p|
       	  p.name = fetch_first_row("select prototypes.name from prototypes where prototypes.id=#{p.id}")
+      	  p.save!
+        end
+        puts "done."
+        
+        puts "updating property presentation..."
+       
+        OptionType.all.each do |p|
+      	  p.presentation = fetch_first_row("select option_types.presentation from option_types where option_types.id=#{p.id}")
       	  p.save!
         end
         puts "done."

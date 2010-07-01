@@ -10,9 +10,10 @@ Install the "Globalize 2 plugin":http://github.com/joshmh/globalize2:
 
 	script/plugin install git://github.com/joshmh/globalize2.git
 	
-Configure product_translations to load after the localization extension. This is working well for me: 
+Configure product_translations to load after the localization extension: 
 
-	config.extensions = [:localization, :product_translations, :all, :site]
+	# config/preinitializer.rb
+	SPREE_EXTENSIONS_LOAD_ORDER = [:localization, :product_translations, :all, :site]
 
 Then run 
 
@@ -49,6 +50,9 @@ Taxonomy
   
 Taxon
 	name
+	
+OptionType
+	presentation
 
 ## TODO ##
 

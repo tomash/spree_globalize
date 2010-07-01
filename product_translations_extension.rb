@@ -27,6 +27,10 @@ class ProductTranslationsExtension < Spree::Extension
     Taxon.class_eval do
       translates :name
     end
+    
+    OptionType.class_eval do
+      translates :presentation
+    end
 
   end
 end

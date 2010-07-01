@@ -5,6 +5,7 @@ class AddTranslationTables < ActiveRecord::Migration
     Prototype.create_translation_table! :name => :string
     Taxonomy.create_translation_table! :name => :string
     Taxon.create_translation_table! :name => :string
+    OptionType.create_translation_table! :presentation => :string
   end
 
   def self.down
@@ -13,5 +14,6 @@ class AddTranslationTables < ActiveRecord::Migration
     Prototype.drop_translation_table!
     Taxonomy.drop_translation_table!
     Taxon.drop_translation_table!
+    OptionType.drop_translation_table!
   end
 end
