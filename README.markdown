@@ -1,6 +1,6 @@
 # Spree Product Translations #
 
-Makes product details, properties, prototypes and taxonomies translatable by bridging the Globalize 2 plugin.
+Makes product details, properties, prototypes, taxonomies and option types translatable by bridging the Globalize 2 plugin.
 
 ## Installation and configuration: ##
 
@@ -54,6 +54,10 @@ Taxon
 OptionType
 	presentation
 
-## TODO ##
+## Running tests ##
 
-* Tests
+You might need to comment out the rspec gem requirement under config/environments/test.rb - for some reason, even with both the rspec gem and plugin installed, I would keep getting an annoying missing gem error.
+
+Spree is officially making a choice for Test::Unit anyway, so this shouldn't create a problem. 
+
+(not that I don't like Rspec, I actually prefer it in other projects.)
