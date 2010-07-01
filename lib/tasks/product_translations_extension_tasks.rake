@@ -55,7 +55,7 @@ namespace :spree do
         end
         puts "done."
         
-        puts "updating property presentation..."
+        puts "updating property presentations..."
         Property.all.each do |p|
       	  p.presentation = fetch_first_row("select properties.presentation from properties where properties.id=#{p.id}")
       	  p.save!
@@ -69,7 +69,7 @@ namespace :spree do
         end
         puts "done."
         
-        puts "updating property presentation..."
+        puts "updating option type presentations..."
        
         OptionType.all.each do |p|
       	  p.presentation = fetch_first_row("select option_types.presentation from option_types where option_types.id=#{p.id}")
