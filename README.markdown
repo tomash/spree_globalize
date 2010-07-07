@@ -4,16 +4,19 @@ Makes product details, properties, prototypes, taxonomies and option types trans
 
 ## Installation and configuration: ##
 
-	script/extension install git://github.com/oliverbarnes/spree-product-translations.git
+With Spree 0.11 installed and bootstrapped, install the spree-i18n extension and the Globalize 2 plugin:
 
-Install the "Globalize 2 plugin":http://github.com/joshmh/globalize2:
-
+	script/extension install git://github.com/railsdog/spree-i18n.git
 	script/plugin install git://github.com/joshmh/globalize2.git
 	
-Configure product_translations to load after the localization extension: 
+Then go ahead and install product_translations:
+
+	script/extension install git://github.com/oliverbarnes/spree-product-translations.git
+	
+Configure product_translations to load after the i18n extension: 
 
 	# config/preinitializer.rb
-	SPREE_EXTENSIONS_LOAD_ORDER = [:localization, :product_translations, :all, :site]
+	SPREE_EXTENSIONS_LOAD_ORDER = [:i18n, :product_translations, :all, :site]
 
 Then run 
 
@@ -27,7 +30,7 @@ If you have pre-existing data, you'll need to run this rake task:
 
 it will copy the original data over to the new translation tables. Globalize 2 doesn't default to the original model table for the default locale like v1 used to.
 
-## How to use: ##
+## How to use it: ##
 
 To edit the content in a specific language, simply change the locale on the language nav, and edit on the admin as usual.
 
