@@ -35,6 +35,9 @@ class ProductTranslationsExtension < Spree::Extension
     OptionValue.class_eval do
       translates :presentation
     end
-
+    
+    # Enable I18n fallbacks
+    require "i18n/backend/fallbacks" 
+    I18n.default_locale = :"en-US"
   end
 end

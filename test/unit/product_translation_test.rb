@@ -46,5 +46,12 @@ class ProductTranslationTest < Test::Unit::TestCase
       I18n.locale = 'pt-BR'
       assert_equal 'meta palavras-chave em português', @product.meta_keywords
     end
+    
+    should "use default locale fallback when a translation is missing" do
+      I18n.locale = 'en-US'
+      @untranslated_product = Factory(:product, :name => 'name of product')  
+      I18n.locale = 'pt-BR'
+      assert_equal 'name of product', @untranslated_product.name
+    end
   end  
 end
