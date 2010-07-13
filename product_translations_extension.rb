@@ -38,6 +38,6 @@ class ProductTranslationsExtension < Spree::Extension
     
     # Enable I18n fallbacks
     require "i18n/backend/fallbacks" 
-    I18n.default_locale = :"en-US"
+    I18n.default_locale = Spree::Config[:default_locale]
   end
 end
