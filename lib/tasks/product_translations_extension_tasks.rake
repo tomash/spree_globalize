@@ -22,7 +22,7 @@ namespace :spree do
         def fetch_first_row(query)
           result = @sql.execute(query)
           row = if defined?(PGresult) && result.is_a?(PGresult) #postgres
-                  result[0]
+                  result.getvalue(0,0)
                 elsif result.is_a?(Array) #sqlite 
                   result[0][0]
                 else #mysql
