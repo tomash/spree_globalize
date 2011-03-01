@@ -1,25 +1,31 @@
-require 'rake'
-require 'rake/rdoctask'
-require 'rake/testtask'
+require File.expand_path('../../config/application', __FILE__)
 
+require 'rubygems'
+require 'rake'
+require 'rake/testtask'
+require 'rake/packagetask'
+require 'rake/gempackagetask'
+
+spec = eval(File.read('blog.gemspec'))
+
+Rake::GemPackageTask.new(spec) do |p|
+  p.gem_spec = spec
+end
+
+desc "Release to gemcutter"
+task :release => :package do
+  require 'rake/gemcutter'
+  Rake::Gemcutter::Tasks.new(spec).define
+  Rake::Task['gem:push'].invoke
+end
+
+desc "Default Task"
 task :default => :test
 
-desc 'Generate documentation for the product_translations extension.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'ProductTranslationsExtension'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
 
-# For extensions that are in transition
-desc 'Test the product_translations extension.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
-
-# Load any custom rakefiles for extension
-Dir[File.dirname(__FILE__) + '/tasks/*.rake'].sort.each { |f| require f }
+# require 'cucumber/rake/task'
+# Cucumber::Rake::Task.new do |t|
+#   t.cucumber_opts = %w{--format pretty}
+# end
