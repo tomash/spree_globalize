@@ -3,12 +3,11 @@ Gem::Specification.new do |s|
   s.name        = 'spree-product-translations'
   s.version     = '0.0.1'
   s.summary     = 'Spree Extension that adds translations to products'
-  #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
-  # s.author            = 'David Heinemeier Hansson'
-  # s.email             = 'david@loudthinking.com'
-  # s.homepage          = 'http://www.rubyonrails.org'
+  s.author            = 'Jeroen Jacobs'
+  s.email             = 'jacobsjeroen@gmail.com'
+  s.homepage          = 'https://github.com/jeroenj/spree-product-translations'
 
   s.files        = Dir['CHANGELOG', 'README.md', 'LICENSE', 'lib/**/*', 'app/**/*']
   s.require_path = 'lib'
