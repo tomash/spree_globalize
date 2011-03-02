@@ -15,7 +15,7 @@ namespace :spree do
                 elsif result.is_a?(Array) #sqlite
                   result[0][0]
                 elsif defined?(Mysql2::Result) && result.is_a?(Mysql2::Result) #mysql2
-                  throw 'Mysql2 is not yet supported'
+                  result.first.first
                 else #mysql
                   result.fetch_row.first
                 end
