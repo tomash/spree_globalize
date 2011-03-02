@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 
   s.author            = 'Jeroen Jacobs'
   s.email             = 'jacobsjeroen@gmail.com'
-  s.homepage          = 'https://github.com/jeroenj/spree-product-translations'
+  s.homepage          = 'https://github.com/jeroenj/spree-product_translations'
 
   s.files        = Dir['README.md', 'lib/**/*']
   s.require_path = 'lib'
