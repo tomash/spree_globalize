@@ -27,7 +27,7 @@ module SpreeProductTranslations
       end
 
       ::Taxon.class_eval do
-        translates :name
+        translates :name, :description
       end
 
       ::OptionType.class_eval do
