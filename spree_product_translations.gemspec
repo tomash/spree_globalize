@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_product_translations'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'Spree Extension that adds translations to products'
   s.required_ruby_version = '>= 1.8.7'
 
