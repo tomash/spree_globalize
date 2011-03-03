@@ -48,6 +48,7 @@ Taxonomy:
 Taxon:
 
 * name
+* description
 
 OptionType:
 
