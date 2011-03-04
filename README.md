@@ -8,11 +8,17 @@ In your Gemfile, add:
 
     gem 'spree_product_translations'
 
-Then run
+Then install the gem:
+
+    bundle install
+
+Then copy the migrations to your spree application:
+
+    rake spree_product_translations:install
+
+Finally migrate your database:
 
     rake db:migrate
-
-to create the translation tables defined in the migrations here.
 
 If you have pre-existing data, you'll need to run this rake task:
 
