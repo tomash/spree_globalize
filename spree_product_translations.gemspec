@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.8.7'
 
   s.author            = 'Jeroen Jacobs'
-  s.email             = 'jacobsjeroen@gmail.com'
+  s.email             = 'gems@jeroenj.be'
   s.homepage          = 'https://github.com/jeroenj/spree-product_translations'
 
   s.files        = Dir['README.md', 'lib/**/*', 'db/**/*']
