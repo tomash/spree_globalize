@@ -13,8 +13,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.has_rdoc = false
-
   s.add_dependency('globalize3', '~> 0.1.0.beta')
   s.add_dependency('spree_core', '>= 0.40.3')
 end
