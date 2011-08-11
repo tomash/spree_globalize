@@ -11,31 +11,31 @@ module SpreeProductTranslations
       end
 
       ::Product.class_eval do
-        translates :name, :description, :meta_description, :meta_keywords
+        translates :name, :description, :meta_description, :meta_keywords, :fallbacks_for_empty_translations => true
       end
 
       ::Property.class_eval do
-        translates :presentation
+        translates :presentation, :fallbacks_for_empty_translations => true
       end
 
       ::Prototype.class_eval do
-        translates :name
+        translates :name, :fallbacks_for_empty_translations => true
       end
 
       ::Taxonomy.class_eval do
-        translates :name
+        translates :name, :fallbacks_for_empty_translations => true
       end
 
       ::Taxon.class_eval do
-        translates :name, :description
+        translates :name, :description, :fallbacks_for_empty_translations => true
       end
 
       ::OptionType.class_eval do
-        translates :presentation
+        translates :presentation, :fallbacks_for_empty_translations => true
       end
 
       ::OptionValue.class_eval do
-        translates :presentation
+        translates :presentation, :fallbacks_for_empty_translations => true
       end
 
       # Enable I18n fallbacks
