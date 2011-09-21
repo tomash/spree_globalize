@@ -2,7 +2,7 @@
 
 Makes product details, properties, prototypes, taxonomies and option types translatable by bridging the [Globalize3](https://github.com/svenfuchs/globalize3) gem.
 
-## Installation and configuration: ##
+## Installation and configuration ##
 
 In your Gemfile, add:
 
@@ -26,43 +26,51 @@ If you have pre-existing data, you'll need to run this rake task:
 
 it will copy the original data over to the new translation tables. Globalize3 doesn't default to the original model table for the default locale like v1 used to.
 
-## How to use it: ##
+## How to use it ##
 
 To edit the content in a specific language, simply change the locale on the language nav, and edit on the admin as usual.
 
-## Translated fields: ##
+## Translated fields ##
 
-Product:
+### Product ###
 
 * name
 * description
 * meta_description
 * meta_keywords
 
-Property:
+### Property ###
 
 * presentation
 
-Prototype:
+### Prototype ###
 
 * name
 
-Taxonomy:
+### Taxonomy ###
 
 * name
 
-Taxon:
+### Taxon ###
 
 * name
 * description
 
-OptionType:
+### OptionType ###
 
 * presentation
 
-OptionValue:
+### OptionValue ###
 
 * presentation
+
+## Fallbacks for empty translations ##
+
+If you have translations in your database (by using the [spree-simple_product_translations](https://github.com/jeroenj/spree-simple_product_translations) extension for example) with empty translations (being a blank string instead of `nil`) you might want to add this configuration option to an initializer in your app:
+
+    Spree::Config.set :fallbacks_for_empty_translations => true
+
+It will then use fallbacks for empty strings too.
 
 ## Running tests ##
 
