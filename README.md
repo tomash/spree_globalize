@@ -1,4 +1,8 @@
-# Spree Product Translations #
+# Spree Globalize #
+
+WARNING: Intensive merge and re-work in progress. Do not use for now!
+
+This extension is a work-in-progress merge of jeroenj/spree-product_translations and tomash/globalize_spree to create THE Spree extension for integrating Globalize3.
 
 Makes product details, properties, prototypes, taxonomies and option types translatable by bridging the [Globalize3](https://github.com/svenfuchs/globalize3) gem.
 
@@ -6,15 +10,11 @@ Makes product details, properties, prototypes, taxonomies and option types trans
 
 In your Gemfile, add:
 
-    gem 'spree_product_translations'
+    gem 'spree_globalize'
 
 Then install the gem:
 
     bundle install
-
-Then copy the migrations to your spree application:
-
-    rake spree_product_translations:install
 
 Finally migrate your database:
 
@@ -22,7 +22,7 @@ Finally migrate your database:
 
 If you have pre-existing data, you'll need to run this rake task:
 
-    rake spree:extensions:product_translations:globalize_legacy_data
+    rake spree:extensions:spree_globalize:globalize_legacy_data
 
 it will copy the original data over to the new translation tables. Globalize3 doesn't default to the original model table for the default locale like v1 used to.
 
