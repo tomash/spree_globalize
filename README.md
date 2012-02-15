@@ -66,23 +66,4 @@ To edit the content in a specific language, simply change the locale on the lang
 
 ## Fallbacks for empty translations ##
 
-If you have translations in your database (by using the [spree-simple_product_translations](https://github.com/jeroenj/spree-simple_product_translations) extension for example) with empty translations (being a blank string instead of `nil`) you might want to add this configuration option to an initializer in your app:
-
-    Spree::Config.set :fallbacks_for_empty_translations => true
-
-It will then use fallbacks for empty strings too.
-
-## Running tests ##
-
-The tests are not updated since the original fork of the spree 0.11 compatible version. They will pretty sure fail. Feel free to fork the project and create a pull request with tests.
-
-### Test information by [oliverbarnes](https://github.com/oliverbarnes) ###
-You might need to comment out the rspec gem requirement under config/environments/test.rb - for some reason, even with both the rspec gem and plugin installed, I would keep getting an annoying missing gem error.
-
-Spree is officially making a choice for Test::Unit anyway, so this shouldn't create a problem.
-
-(not that I don't like Rspec, I actually prefer it in other projects.)
-
-## Feature requests and patches welcome ##
-
-If you see anything you need missing, or if you have a useful patch, feel free to submit them on the Issues section of the github project.
+Should work OOTB.
